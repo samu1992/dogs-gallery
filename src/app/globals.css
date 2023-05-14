@@ -42,3 +42,7 @@ body{
     z-index: 20;
     right: 0;
 }
+.primary{
+  position: absolute;
+  right: 200px;
+}

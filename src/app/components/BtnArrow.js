@@ -1,24 +1,14 @@
 import React from 'react';
 
-const LeftArrow = ({ isLoading, page, setPage }) => (
-    <button
-        className="btn"
-        onClick={() => {
-            if (!isLoading && page > 1) {
-                setPage((prevPage) => prevPage - 1);
-            }
-        }}
-    >
-        izquierda
-    </button>
-);
 
-const RightArrow = () => (
-    <button
-        className="btn-primary"
-    >
-        derecha
-    </button>
-);
+const handleScrollLeft = () => {
+        const scrollElement = scrollRef.current;
+        if (scrollElement) {
+            scrollElement.scrollBy({
+                left: -scrollElement.clientWidth,
+                behavior: 'smooth',
+            });
+        }
+    };
 
-export { LeftArrow, RightArrow };
+export default handleScrollLeft;
