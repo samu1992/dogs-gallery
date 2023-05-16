@@ -2,12 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body,html{
     padding: 0;
     margin: 0;
     min-width: 100%;
-    background-color: #ebeff7;
-    
+    min-height: 100vh;
+    background-image: url(fondo.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 #hover{
@@ -40,7 +43,7 @@ body{
   flex-shrink: 0;
 }
 .detalles{
-  background: #aab0be;
+  background: #2c2d2e;
 }
 
 
