@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Card from '../components/Card';
 import BreedsDetail from '../components/BreedsDetail';
-import { AiOutlineLeft } from 'react-icons/ai';
+import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 
 const API_URL = 'https://api.thedogapi.com/v1/breeds';
 const LIMIT = 10;
@@ -25,7 +25,7 @@ const Api = () => {
             console.error(error);
         } finally {
             setIsLoading(false);
-        }
+        }console.log(breeds)
     };
 
     useEffect(() => {
@@ -85,13 +85,13 @@ const Api = () => {
     }, [breeds]);
 
     return (
-        <section className="flex flex-col justify-between items-center h-screen w-11/12 p-10 relative borde">
+        <section className="flex flex-col justify-between items-center gap-8 h-screen w-full p-8 relative">
             {selectedBreed && <BreedsDetail {...selectedBreed} />}
-            <div className="scroll borde flex overflow-hidden w-full z-10 items-center p-2" ref={scrollRef}>
-                <div className='flex absolute left-0 z-20 ml-10 p-2 rounded-full text-white text-shadow'>
+            <div className="scroll flex overflow-hidden w-full items-center" ref={scrollRef}>
+                <div className='flex absolute left-0 z-20 p-2 rounded-full text-white text-shadow'>
                     <AiOutlineLeft className='text-5xl cursor-pointer' onClick={handleScrollLeft}/>
                 </div>
-                <div className="flex relative gap-6 z-10">
+                <div className="flex relative gap-6 p-10">
                     {breeds &&
                         breeds.map(({ id, name, bred_for, origin, temperament, life_span, image }, index) => (
                             <Card
@@ -102,8 +102,8 @@ const Api = () => {
                         ))}
                         {isLoading && <p>Cargando...</p>}
                 </div>
-                <div className='btn-primary borde'>
-                    <button className='' onClick={handleScrollRight}>adelante</button>
+                <div className='flex absolute right-0 z-20  p-2 rounded-full text-white text-shadow'>
+                    <AiOutlineRight className='text-5xl cursor-pointer' onClick={handleScrollRight}/>
                 </div>
             </div>
         </section>
