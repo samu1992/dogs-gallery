@@ -16,7 +16,7 @@ const Card = ({ breed, onClick }) => {
 
   return (
       <div key={id} className='flex flex-row items-center justify-center cursor-pointer' onClick={handleClick}>
-        <Image priority src={url} alt='hola' width={200} height={200} id='hover'/>
+        <Image src={url} alt='hola' width={200} height={200} id='hover'/>
       </div>
   );
 };
