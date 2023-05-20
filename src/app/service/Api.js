@@ -25,7 +25,7 @@ const Api = () => {
             console.error(error);
         } finally {
             setIsLoading(false);
-        }console.log(breeds)
+        }
     };
 
     useEffect(() => {
@@ -91,7 +91,7 @@ const Api = () => {
                 <div className='flex absolute left-0 z-20 p-2 rounded-full text-white text-shadow'>
                     <AiOutlineLeft className='text-5xl cursor-pointer' onClick={handleScrollLeft}/>
                 </div>
-                <div className="flex relative gap-6 p-10 justify-between items-center flex-row">
+                <div className="flex relative gap-6 p-10 h-full justify-between items-center flex-row">
                     {breeds &&
                         breeds.map(({ id, name, bred_for, origin, temperament, life_span, image }, index) => (
                             <Card
