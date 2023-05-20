@@ -7,7 +7,7 @@ body,html{
     margin: 0;
     min-width: 100%;
     min-height: 100vh;
-    background-image: url(fondo.svg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(fondo.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -36,15 +36,14 @@ body,html{
   flex-shrink: 0;
 }
 .imagen-2{
-  width: 600px;
-  height: 450px;
+  width: 400px;
+  height: 320px;
   object-fit: cover;
   object-position: center;
   flex-shrink: 0;
 }
 .detalles{
   background: #2c2d2e;
-  min-height: 450px;
 }
 
 

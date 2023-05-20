@@ -85,13 +85,13 @@ const Api = () => {
     }, [breeds]);
 
     return (
-        <section className="flex flex-col justify-center items-center gap-10 w-full p-8 relative">
+        <section className="flex flex-col justify-center items-center gap-10 w-full p-8 relative h-full">
             {selectedBreed && <BreedsDetail {...selectedBreed} />}
             <div className="scroll flex overflow-hidden w-full items-center" ref={scrollRef}>
                 <div className='flex absolute left-0 z-20 p-2 rounded-full text-white text-shadow'>
                     <AiOutlineLeft className='text-5xl cursor-pointer' onClick={handleScrollLeft}/>
                 </div>
-                <div className="flex relative gap-6 p-10 h-full justify-between items-center flex-row">
+                <div className="flex relative gap-6 p-4 h-full justify-between items-center flex-row">
                     {breeds &&
                         breeds.map(({ id, name, bred_for, origin, temperament, life_span, image }, index) => (
                             <Card
