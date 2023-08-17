@@ -6,6 +6,7 @@ import BreedsDetail from '../components/BreedsDetail';
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 
 const API_URL = 'https://api.thedogapi.com/v1/breeds';
+const API_KEY = 'live_zi0p6LbN3h9LSP6hGsJ8TbMvFvTXbGYBsj3B2J8nVPTg3NVkz8UEdi2HKudxUuXU'; // Tu clave API aquí
 const LIMIT = 10;
 
 const Api = () => {
@@ -18,7 +19,11 @@ const Api = () => {
     const fetchData = async (pageNumber) => {
         setIsLoading(true);
         try {
-            const response = await fetch(`${API_URL}?page=${pageNumber}&limit=${LIMIT}`);
+            const response = await fetch(`${API_URL}?page=${pageNumber}&limit=${LIMIT}`, {
+                headers: {
+                    'x-api-key': API_KEY,
+                },
+            });
             const data = await response.json();
             setBreeds((prevBreeds) => [...prevBreeds, ...data]);
         } catch (error) {

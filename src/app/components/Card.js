@@ -4,6 +4,7 @@ import Image from 'next/image';
 const Card = ({ breed, onClick }) => {
   if (!breed || typeof breed !== 'object') {
     console.error('Invalid breed object:', breed);
+    console.log(breed)
     return null;
   }
 
@@ -16,7 +17,7 @@ const Card = ({ breed, onClick }) => {
 
   return (
       <div key={id} className='flex flex-row items-center justify-center cursor-pointer' onClick={handleClick}>
-        <Image src={url} alt='hola' width={200} height={200} id='hover' className='object-cover'/>
+        <Image src={url} alt='img' width={200} height={200} id='hover' className='object-cover'/>
       </div>
   );
 };
